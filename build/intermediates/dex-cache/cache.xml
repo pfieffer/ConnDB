@@ -7,7 +7,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
-        sha1="ecf2d95f8bcdf05b65ee325aa63df0931118fd84">
+        sha1="2650a4cb40e6ac3262fa230e279d944aae768ef1">
         <dex dex="/home/ravi/AndroidStudioProjects/DBConn/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_7d8bec9cacd0e9914a733986856f13efb684a173/classes.dex" />
     </item>
     <item
@@ -18,6 +18,15 @@
         revision="25.0.3"
         sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
         <dex dex="/home/ravi/AndroidStudioProjects/DBConn/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_1674bea11a7fb468c2df9beba91fc4b10f6d508d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/ravi/AndroidStudioProjects/DBConn/app/libs/volley.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d4aaa36e04ee71a83444f8367c97a46fda662d2c">
+        <dex dex="/home/ravi/AndroidStudioProjects/DBConn/app/build/intermediates/transforms/dex/debug/folders/1000/2/volley_11d0453601ab8f91d699e05d65224ec0f2a932aa/classes.dex" />
     </item>
 
 </items>

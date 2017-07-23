@@ -20,4 +20,10 @@
         android:text="Add New Products"
         android:layout_marginTop="25dip"/>
 
+
+    <TextView
+        android:id="@+id/product_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 </LinearLayout>
