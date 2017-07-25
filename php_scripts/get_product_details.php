@@ -7,25 +7,32 @@
  
 // array for JSON response
 $response = array();
+
+header('Content-Type: application/json');
  
 // include db connect class
 require_once __DIR__ . '/db_connect.php';
  
 // connecting to db
-$db = new DB_CONNECT();
+$conn = new db_CONNECT();
+
+$cone=$conn->con;
+
  
 // check for post data
 if (isset($_GET["pid"])) {
     $pid = $_GET['pid'];
  
     // get a product from products table
-    $result = mysql_query("SELECT *FROM products WHERE pid = $pid");
+    $sql = "SELECT *FROM products WHERE pid = $pid";
+
+    $result = $cone->query($sql);
  
     if (!empty($result)) {
         // check for empty result
-        if (mysql_num_rows($result) > 0) {
+        if ($result->num_rows > 0) {
  
-            $result = mysql_fetch_array($result);
+            $result = $result->fetch_assoc();
  
             $product = array();
             $product["pid"] = $result["pid"];

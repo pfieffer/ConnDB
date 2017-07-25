@@ -1,143 +1,52 @@
 <?php
 
+include_once './db_connect.php';
  
+function getProducts(){
+    $db = new DB_CONNECT();
+    // array for json response
+    $response = array();
+    $response["products"] = array();
 
-/*
 
- * Following code will get single product details
-
- * A product is identified by product id (pid)
-
- */
-
- 
-
-// array for JSON response
-
-$response = array();
-
- 
-
-// include db connect class
-
-require_once __DIR__ . '/db_connect.php';
-
- 
-
-// connecting to db
-
-$conn=new DB_CONNECT();
-
-$cone=$conn->con;
-
-// check for post data
-
-if (isset($_GET["pid"])) {
-
-    $pid = $_GET['pid'];
-
- 
-
-    // get a product from products table
-
-    $sql = "SELECT * FROM products WHERE pid = $pid";
-
-    $result = $cone->query($sql);
-
- 
-
-    if (!empty($result)) {
-
-        // check for empty result
-
-        if ($result->num_rows > 0) {
-
- 
-
-            $result = $result->fetch_assoc();
-
- 
-
-            $product = array();
-
-            $product["pid"] = $result["pid"];
-
-            $product["name"] = $result["name"];
-
-            $product["price"] = $result["price"];
-
-            $product["description"] = $result["description"];
-
-            $product["created_at"] = $result["created_at"];
-
-            $product["updated_at"] = $result["updated_at"];
-
-            // success
-
-            $response["success"] = 1;
-
- 
-
-            // user node
-
-            $response["product"] = array();
-
- 
-
-            array_push($response["product"], $product);
-
- 
-
-            // echoing JSON response
-
-            echo json_encode($response);
-
-        } else {
-
-            // no product found
-
-            $response["success"] = 0;
-
-            $response["message"] = "No product found";
-
- 
-
-            // echo no users JSON
-
-            echo json_encode($response);
-
+    $cone=$db->con;
+     
+    // Mysql select query
+    $result = mysqli_query($cone, "SELECT * FROM products");
+     
+    if(!empty($result)){
+        while($row = mysqli_fetch_array($result)){
+        // temporary array to create single category
+        $tmp = array();
+        $tmp["id"] = $row["pid"];
+        $tmp["name"] = $row["name"];
+        $tmp["price"] = $row["price"];
+        $tmp["description"] = $row["description"];
+         
+        // push category to final json array
+        array_push($response["products"], $tmp);
         }
-
-    } else {
-
-        // no product found
-
-        $response["success"] = 0;
-
-        $response["message"] = "No product found";
-
- 
-
-        // echo no users JSON
-
+         
+        // keeping response header to json
+        header('Content-Type: application/json');
+         
+        // echoing json result
         echo json_encode($response);
-
     }
-
-} else {
-
-    // required field is missing
+    else{
+      // no product found
 
     $response["success"] = 0;
 
-    $response["message"] = "Required field(s) is missing";
+    $response["message"] = "No product found";
 
- 
-
-    // echoing JSON response
-
+    // echo no users JSON
     echo json_encode($response);
-
+    }
 }
+ 
+getProducts();
+
+
 
 ?>
