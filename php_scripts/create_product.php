@@ -7,6 +7,8 @@
  
 // array for JSON response
 $response = array();
+
+header('Content-Type: application/json');
  
 // check for required fields
 if (isset($_POST['name']) && isset($_POST['price']) && isset($_POST['description'])) {
@@ -19,13 +21,17 @@ if (isset($_POST['name']) && isset($_POST['price']) && isset($_POST['description
     require_once __DIR__ . '/db_connect.php';
  
     // connecting to db
-    $db = new DB_CONNECT();
- 
+	$conn = new db_CONNECT();
+
+	$cone=$conn->con;
+
     // mysql inserting a new row
-    $result = mysql_query("INSERT INTO products(name, price, description) VALUES('$name', '$price', '$description')");
+    $sql = "INSERT INTO products(name, price, description) VALUES('$name', '$price', '$description')";
+    $result= $cone -> query($sql);
+    $affected = $cone -> affected_rows;
  
     // check if row inserted or not
-    if ($result) {
+    if ($affected==1) {
         // successfully inserted into database
         $response["success"] = 1;
         $response["message"] = "Product successfully created.";
@@ -49,3 +55,4 @@ if (isset($_POST['name']) && isset($_POST['price']) && isset($_POST['description
     echo json_encode($response);
 }
 ?>
+
