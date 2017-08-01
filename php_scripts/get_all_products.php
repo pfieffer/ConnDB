@@ -22,7 +22,9 @@ function getProducts(){
         $tmp["name"] = $row["name"];
         $tmp["price"] = $row["price"];
         $tmp["description"] = $row["description"];
-         
+
+        $response["success"] = 1;
+
         // push category to final json array
         array_push($response["products"], $tmp);
         }

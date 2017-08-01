@@ -9,8 +9,7 @@
 $response = array();
  
 // check for required fields
-if (isset($_POST['pid']) && isset($_POST['name']) && isset($_POST['price']) && isset($_POST['description'])) {
- 
+if ($_SERVER['REQUEST_METHOD']=='POST') {
     $pid = $_POST['pid'];
     $name = $_POST['name'];
     $price = $_POST['price'];
@@ -20,28 +19,21 @@ if (isset($_POST['pid']) && isset($_POST['name']) && isset($_POST['price']) && i
     require_once __DIR__ . '/db_connect.php';
  
     // connecting to db
-    $db = new DB_CONNECT();
+    $conn = new DB_CONNECT();
+    $cone = $conn -> con;
  
     // mysql update row with matched pid
-    $result = mysql_query("UPDATE products SET name = '$name', price = '$price', description = '$description' WHERE pid = $pid");
+    $sql = "UPDATE products SET name = '$name', price = '$price', description = '$description' WHERE pid = $pid";
  
     // check if row inserted or not
-    if ($result) {
-        // successfully updated
-        $response["success"] = 1;
-        $response["message"] = "Product successfully updated.";
- 
-        // echoing JSON response
-        echo json_encode($response);
+    if (mysqli_query($cone, $sql)) {
+        echo "Product updated successfully";
     } else {
- 
+        echo "Product update unsuccessfull";
     }
-} else {
-    // required field is missing
-    $response["success"] = 0;
-    $response["message"] = "Required field(s) is missing";
- 
-    // echoing JSON response
-    echo json_encode($response);
 }
+else {
+    echo "Some field missing";
+}
+
 ?>
