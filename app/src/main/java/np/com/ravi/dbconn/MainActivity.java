@@ -26,8 +26,7 @@ import np.com.ravi.dbconn.app.AppController;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnViewProducts;
-    Button btnNewProduct;
+    Button btnViewProducts, btnUpdateProduct, btnNewProduct;
 
 
 
@@ -38,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
         btnViewProducts = (Button) findViewById(R.id.btnViewProducts);
         btnNewProduct = (Button) findViewById(R.id.btnCreateProduct);
+        btnUpdateProduct = (Button) findViewById(R.id.btnUpdateProduct);
 
 
         btnViewProducts.setOnClickListener(new View.OnClickListener() {
@@ -56,6 +56,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        btnUpdateProduct.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, UpdateProductActivity.class));
+            }
+        });
+
+
     }
 
 

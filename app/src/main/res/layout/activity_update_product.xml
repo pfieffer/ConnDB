@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="np.com.ravi.dbconn.UpdateProductActivity">
+
+        <TextView
+            android:text="@string/update_product_info"
+            android:textSize="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/pid_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Please enter  the product id"
+            android:inputType="number"/>
+
+        <Button
+            android:id="@+id/button_view_at_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View"/>
+
+        <LinearLayout
+            android:id="@+id/linearView"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/view_product_at_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <EditText
+                android:id="@+id/new_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="New Name"/>
+            <EditText
+                android:id="@+id/new_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="New Price"/>
+            <EditText
+                android:id="@+id/new_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="New Description"/>
+            <Button
+                android:id="@+id/btn_update"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Update"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
