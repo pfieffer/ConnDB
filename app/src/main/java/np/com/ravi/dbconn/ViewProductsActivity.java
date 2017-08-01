@@ -26,7 +26,7 @@ import np.com.ravi.dbconn.app.AppController;
 
 public class ViewProductsActivity extends AppCompatActivity {
     //json object response url
-    private String urlForJsonObject = "http://10.0.0.139/androidTest/get_all_products.php";
+    private String urlForJsonObject = "http://10.0.0.139/androidTest/get_all_products.php"; //office IP
 
     private static String TAG = MainActivity.class.getSimpleName();
 
@@ -44,25 +44,20 @@ public class ViewProductsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_products);
-        
+
         productsList = (ListView) findViewById(R.id.listview_all_products);
 
         pDialog = new ProgressDialog(this);
         pDialog.setMessage("Please Wait....");
         pDialog.setCancelable(false);
 
-
         makeJsonObjectRequest();
-
-
     }
 
     private void makeJsonObjectRequest() {
 
-        showpDialog(); //showing progress dialog while json oject is being fetched
+        showpDialog();
 
-        // Instanciating an array list (you don't need to do this,
-        // you already have yours).
         final List<String> productsArrayList = new ArrayList<String>();
 
 
@@ -92,12 +87,8 @@ public class ViewProductsActivity extends AppCompatActivity {
                                     jsonResponse += "Description: " + description + "\n\n";
                                     productsArrayList.add(jsonResponse);
 
-
-                                    //txtResponse.setText(jsonResponse);
                                 }
-                                // This is the array adapter, it takes the context of the activity as a
-                                // first parameter, the type of list view as a second parameter and your
-                                // array as a third parameter.
+
                                 ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
                                         ViewProductsActivity.this,
                                         android.R.layout.simple_list_item_1,
@@ -116,7 +107,7 @@ public class ViewProductsActivity extends AppCompatActivity {
                                     Toast.LENGTH_LONG).show();
                         }
 
-                        hidepDialog(); //hide the dialog after the JSON object is loaded
+                        hidepDialog();
 
                     }
 
@@ -125,10 +116,9 @@ public class ViewProductsActivity extends AppCompatActivity {
             public void onErrorResponse(VolleyError volleyError) {
                 VolleyLog.d(TAG,"Error: "+ volleyError.getMessage() );
                 Toast.makeText(getApplicationContext(), volleyError.getMessage(), Toast.LENGTH_SHORT).show();
-                hidepDialog(); //hide the progress dialog
+                hidepDialog();
             }
         });
-
         //adding request to request queue
         AppController.getmInstance().addToRequestQueue(jsonObjReq);
     }
