@@ -37,7 +37,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    useLibrary 'org.apache.http.legacy'
 }
 
 dependencies {
@@ -52,6 +51,7 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
 }
+
 ```
 
 ---
