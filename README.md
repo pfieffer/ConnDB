@@ -6,7 +6,7 @@
 * ~~~Create products from android phone.~~~
 * View details of a product on clicking a particular item in all products listview.
 * ~~~Update existing products.~~~
-* Delete products
+* ~~~Delete products.~~~
 
 The MainActivity looks like:
 [![Screenshot_20170801-164053.png](https://s3.postimg.org/tjaitdk43/Screenshot_20170801-164053.png)](https://postimg.org/image/rrhjyh0r3/)
