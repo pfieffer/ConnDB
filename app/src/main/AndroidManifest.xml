@@ -21,7 +21,8 @@
         </activity>
         <activity android:name=".NewProductActivity" />
         <activity android:name=".ViewProductsActivity" />
-        <activity android:name=".UpdateProductActivity"></activity>
+        <activity android:name=".UpdateProductActivity" />
+        <activity android:name=".DeleteProductActivity"></activity>
     </application>
 
 </manifest>

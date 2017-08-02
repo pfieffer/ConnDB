@@ -5,44 +5,29 @@
  * A product is identified by product id (pid)
  */
  
-// array for JSON response
-$response = array();
- 
-// check for required fields
-if (isset($_POST['pid'])) {
+if ($_SERVER['REQUEST_METHOD']=='POST') {
     $pid = $_POST['pid'];
  
     // include db connect class
     require_once __DIR__ . '/db_connect.php';
  
     // connecting to db
-    $db = new DB_CONNECT();
+    $conn = new DB_CONNECT();
+    $cone = $conn -> con;
  
     // mysql update row with matched pid
-    $result = mysql_query("DELETE FROM products WHERE pid = $pid");
+    $sql = "DELETE FROM products WHERE pid = $pid";
  
-    // check if row deleted or not
-    if (mysql_affected_rows() > 0) {
-        // successfully updated
-        $response["success"] = 1;
-        $response["message"] = "Product successfully deleted";
- 
-        // echoing JSON response
-        echo json_encode($response);
+    // check if row inserted or not
+    if (mysqli_query($cone, $sql)) {
+        echo "Product deleted successfully";
     } else {
-        // no product found
-        $response["success"] = 0;
-        $response["message"] = "No product found";
- 
-        // echo no users JSON
-        echo json_encode($response);
+        echo "Product deletion unsuccessfull";
     }
-} else {
-    // required field is missing
-    $response["success"] = 0;
-    $response["message"] = "Required field(s) is missing";
- 
-    // echoing JSON response
-    echo json_encode($response);
 }
+else {
+    echo "Product id missing";
+}
+
 ?>
+
