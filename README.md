@@ -9,12 +9,50 @@
 * ~~~Delete products.~~~
 
 ### To test:
-* Clone the repo
-* Move contents of `php_scripts` to your `localhost/androidTest/` folder
-* Create database using the query at `db/products.sql` or simply importing the same. I set the name of the database as `phone_iinfo`
+* Clone the repo: `git clone https://github.com/pfieffer/ConnDB.git` or `git clone git@github.com:pfieffer/ConnDB.git` OR Download the zip. Open in Android Studio.
+* Move contents of `php_scripts` to your `htdocs/androidTest/` folder.
+* Create database using the query at `db/products.sql` or simply importing the same. I have set the name of the database as `phone_iinfo`
 * Change the ip addresses at all activities `DeleteProductActivity.java`, `UpdateProductActivity.java`, `NewProductActivity.java` and `ViewProductsActivity.java`
-* Start localhost using `sudo /opt/lampp/lampp start` on linux (using XAMPP on Windows)
+* Start localhost using `sudo /opt/lampp/lampp start` on linux / using XAMPP on Windows.
 * Run the app on phone, connect the phone and PC to the same Wifi Network and the app should run seemlessly.
+
+The `build.gradle` file `Module:app` of the project is:
+```GRADLE
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.3"
+    defaultConfig {
+        applicationId "np.com.ravi.dbconn"
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    useLibrary 'org.apache.http.legacy'
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+
+    //volley
+    compile files('libs/volley.jar')
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    testCompile 'junit:junit:4.12'
+}
+```
 
 ---
 
