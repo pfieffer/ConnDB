@@ -74,7 +74,7 @@ public class DeleteProductActivity extends AppCompatActivity {
     private void deleteProductAtPID(final String pid) {
         pDialog.setMessage("Deleting product "+pid+"...");
         showpDialog();
-        String baseUrl = "http://10.0.0.139/androidTest/delete_product.php";
+        String baseUrl = "http://192.168.2.118/androidTest/delete_product.php"; //home ip
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, baseUrl,
                 new Response.Listener<String>() {

@@ -81,7 +81,7 @@ public class UpdateProductActivity extends AppCompatActivity {
     private void updateProductAtPID(final String pid) {
         pDialog.setMessage("Updating product details...");
         showpDialog();
-        String baseUrl = "http://10.0.0.139/androidTest/update_product.php";
+        String baseUrl = "http://192.168.2.118/androidTest/update_product.php";
         final String sName = newName.getText().toString();
         final String sPrice = newPrice.getText().toString();
         final String sDesc = newDescription.getText().toString();
@@ -118,7 +118,7 @@ public class UpdateProductActivity extends AppCompatActivity {
     private void getProductAtPID(String pid) {
         pDialog.setMessage("Fetching product details... ");
         showpDialog();
-        String baseUrl = "http://10.0.0.139/androidTest/get_product_details.php";
+        String baseUrl = "http://192.168.2.118/androidTest/get_product_details.php"; //home ip
         JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.GET,
                 baseUrl+"?pid="+pid,
                 null,

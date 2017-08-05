@@ -13,7 +13,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 
-import org.json.JSONException;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -26,7 +25,7 @@ public class NewProductActivity extends AppCompatActivity {
     private Button btnAddProduct;
     private ProgressDialog pDialog;
 
-    private String urlForAddingProduct = "http://10.0.0.139/androidTest/create_product.php";
+    private String urlForAddingProduct = "http://192.168.2.118/androidTest/create_product.php";
     private static String TAG = NewProductActivity.class.getSimpleName();
 
     String name, price, description;

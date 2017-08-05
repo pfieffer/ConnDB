@@ -26,7 +26,7 @@ import np.com.ravi.dbconn.app.AppController;
 
 public class ViewProductsActivity extends AppCompatActivity {
     //json object response url
-    private String urlForJsonObject = "http://10.0.0.139/androidTest/get_all_products.php"; //office IP
+    private String urlForJsonObject = "http://192.168.2.118/androidTest/get_all_products.php"; //home IP
 
     private static String TAG = MainActivity.class.getSimpleName();
 
