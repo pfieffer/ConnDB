@@ -12,7 +12,7 @@
 * Clone the repo: `git clone https://github.com/pfieffer/ConnDB.git` or `git clone git@github.com:pfieffer/ConnDB.git` OR Download the zip. Open in Android Studio.
 * Move contents of `php_scripts` to your `htdocs/androidTest/` folder.
 * Create database using the query at `db/products.sql` or simply importing the same. I have set the name of the database as `phone_iinfo`
-* Change the ip addresses at all activities `DeleteProductActivity.java`, `UpdateProductActivity.java`, `NewProductActivity.java` and `ViewProductsActivity.java`
+* Change the ip addresses at `baseUrl` in `app/src/main/java/np/com/ravi/dbconn/app/Appcontroller.java` to your ipaddress. Use `ifconfig` on terminal `ipconfig` on cmd(windows) to vire your ip address.
 * Start localhost using `sudo /opt/lampp/lampp start` on linux / using XAMPP on Windows.
 * Run the app on phone, connect the phone and PC to the same Wifi Network and the app should run seemlessly.
 
