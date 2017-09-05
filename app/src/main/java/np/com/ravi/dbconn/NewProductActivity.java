@@ -25,7 +25,7 @@ public class NewProductActivity extends AppCompatActivity {
     private Button btnAddProduct;
     private ProgressDialog pDialog;
 
-    private String urlForAddingProduct = "http://192.168.2.118/androidTest/create_product.php";
+    private String urlForAddingProduct = AppController.baseUrl+"create_product.php";
     private static String TAG = NewProductActivity.class.getSimpleName();
 
     String name, price, description;

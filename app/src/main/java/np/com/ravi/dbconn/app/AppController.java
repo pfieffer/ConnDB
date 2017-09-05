@@ -18,6 +18,8 @@ public class AppController extends Application{
 
     private static AppController mInstance;
 
+    public static String baseUrl= "http://192.168.2.102/androidTest/";
+
     @Override
     public void onCreate() {
         super.onCreate();
