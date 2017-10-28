@@ -1,7 +1,4 @@
 <?php
-
- 
-
 /**
 
  * A class file to connect to database
@@ -60,15 +57,6 @@ class DB_CONNECT {
 
  
 
-        // Selecing database
-
-        //$db = mysqli_select_db($this->con,DB_DATABASE) or die(mysql_error()) or die(mysql_error());
-
- 
-
-        // returing connection cursor
-
-        //return $this->con;
 
     }
 
