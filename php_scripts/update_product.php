@@ -5,9 +5,6 @@
  * A product is identified by product id (pid)
  */
  
-// array for JSON response
-$response = array();
- 
 // check for required fields
 if ($_SERVER['REQUEST_METHOD']=='POST') {
     $pid = $_POST['pid'];
@@ -23,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
     $cone = $conn -> con;
  
     // mysql update row with matched pid
-    $sql = "UPDATE products SET name = '$name', price = '$price', description = '$description' WHERE pid = $pid";
+    $sql = "UPDATE products SET name = '$name', price = '$price', description = '$description', updated_at=now() WHERE pid = $pid";
  
     // check if row inserted or not
     if (mysqli_query($cone, $sql)) {
@@ -37,3 +34,4 @@ else {
 }
 
 ?>
+
