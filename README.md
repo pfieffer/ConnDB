@@ -1,4 +1,4 @@
-# Connecting android to local database
+# Connecting android to MySQL database
 
 >Uses Volley Library
 
@@ -10,6 +10,7 @@
 * ~~~Upload php scripts and database to remote server.~~~
 
 ### To test:
+>Do not follow striked steps as they were to setup database on local server. The database and php scripts have been moved to the remote server. So you only need to get the app running to test this
 * Clone the repo: `git clone https://github.com/pfieffer/ConnDB.git` or `git clone git@github.com:pfieffer/ConnDB.git` OR Download the zip. Open in Android Studio.
 * ~~~Move contents of `php_scripts` to your `htdocs/androidTest/` folder.~~~
 * ~~~Create database using the query at `db/products.sql` or simply importing the same. I have set the name of the database as `phone_iinfo`~~~
