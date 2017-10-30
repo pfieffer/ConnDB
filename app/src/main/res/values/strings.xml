@@ -1,7 +1,9 @@
 <resources>
     <string name="app_name">DBConn</string>
 
-    <string name="view_products_info">These are all the products that are currently in our database</string>
+    <string name="no_connection">No internet connection.</string>
+
+    <string name="view_products_info">These are all the products that are currently in our database: </string>
     <string name="update_product_info">Please Enter the products id to update it</string>
     <string name="delete_product_info">Please enter the id of the product to delete it</string>
 </resources>

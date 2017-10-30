@@ -74,7 +74,7 @@ public class DeleteProductActivity extends AppCompatActivity {
     private void deleteProductAtPID(final String pid) {
         pDialog.setMessage("Deleting product "+pid+"...");
         showpDialog();
-        String baseUrl = AppController.baseUrl+"delete_product.php"; //home ip
+        String baseUrl = AppController.baseUrl+"delete_product.php";
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, baseUrl,
                 new Response.Listener<String>() {
@@ -105,7 +105,7 @@ public class DeleteProductActivity extends AppCompatActivity {
     private void getProductAtPID(String pid) {
         pDialog.setMessage("Fetching product details... ");
         showpDialog();
-        String baseUrl = "http://10.0.0.139/androidTest/get_product_details.php";
+        String baseUrl = AppController.baseUrl+"get_product_details.php";
         JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.GET,
                 baseUrl+"?pid="+pid,
                 null,
