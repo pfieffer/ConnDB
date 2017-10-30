@@ -11,12 +11,13 @@
 
 ### To test:
 >Do not follow striked steps as they were to setup database on local server. The database and php scripts have been moved to the remote server. So you only need to get the app running to test this
-* Clone the repo: `git clone https://github.com/pfieffer/ConnDB.git` or `git clone git@github.com:pfieffer/ConnDB.git` OR Download the zip. Open in Android Studio.
+* Clone the repo: `git clone https://github.com/pfieffer/ConnDB.git` or `git clone git@github.com:pfieffer/ConnDB.git` OR Download the zip.
 * ~~~Move contents of `php_scripts` to your `htdocs/androidTest/` folder.~~~
 * ~~~Create database using the query at `db/products.sql` or simply importing the same. I have set the name of the database as `phone_iinfo`~~~
 * ~~~Change the ip addresses at `baseUrl` in `app/src/main/java/np/com/ravi/dbconn/app/Appcontroller.java` to your ipaddress. Use `ifconfig` on terminal `ipconfig` on cmd(windows) to view your ip address.~~~
 * ~~~Start localhost using `sudo /opt/lampp/lampp start` on linux / using XAMPP on Windows.~~~
-* Run the app on phone, connect the phone and PC to the same Wifi Network and the app should run seemlessly.
+* ~~~Run the app on phone, connect the phone and PC to the same Wifi Network and the app should run seemlessly.~~~
+* Open the app project on Android Studio and run the app on phone.
 
 The `build.gradle` file `Module:app` of the project is:
 ```GRADLE
