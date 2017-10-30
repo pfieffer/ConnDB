@@ -7,13 +7,14 @@
 * View details of a product on clicking a particular item in all products listview.
 * ~~~Update existing products.~~~
 * ~~~Delete products.~~~
+* ~~~Upload php scripts and database to remote server.~~~
 
 ### To test:
 * Clone the repo: `git clone https://github.com/pfieffer/ConnDB.git` or `git clone git@github.com:pfieffer/ConnDB.git` OR Download the zip. Open in Android Studio.
-* Move contents of `php_scripts` to your `htdocs/androidTest/` folder.
-* Create database using the query at `db/products.sql` or simply importing the same. I have set the name of the database as `phone_iinfo`
-* Change the ip addresses at `baseUrl` in `app/src/main/java/np/com/ravi/dbconn/app/Appcontroller.java` to your ipaddress. Use `ifconfig` on terminal `ipconfig` on cmd(windows) to vire your ip address.
-* Start localhost using `sudo /opt/lampp/lampp start` on linux / using XAMPP on Windows.
+* ~~~Move contents of `php_scripts` to your `htdocs/androidTest/` folder.~~~
+* ~~~Create database using the query at `db/products.sql` or simply importing the same. I have set the name of the database as `phone_iinfo`~~~
+* ~~~Change the ip addresses at `baseUrl` in `app/src/main/java/np/com/ravi/dbconn/app/Appcontroller.java` to your ipaddress. Use `ifconfig` on terminal `ipconfig` on cmd(windows) to view your ip address.~~~
+* ~~~Start localhost using `sudo /opt/lampp/lampp start` on linux / using XAMPP on Windows.~~~
 * Run the app on phone, connect the phone and PC to the same Wifi Network and the app should run seemlessly.
 
 The `build.gradle` file `Module:app` of the project is:
@@ -45,7 +46,6 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
 
-    //volley
     compile files('libs/volley.jar')
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
