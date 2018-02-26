@@ -17,12 +17,17 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
     require_once __DIR__ . '/db_connect.php';
  
     // connecting to db
-	$conn = new db_CONNECT();
+    $conn = new db_CONNECT();
 
-	$cone=$conn->con;
+    $cone=$conn->con;
+    
+    //escpae the strings to be inserted to DB
+    $escapedname = mysqli_real_escape_string($cone, $name);
+    $escapedprice = mysqli_real_escape_string($cone, $price);
+    $escapeddesc = mysqli_real_escape_string($cone, $description);
 
     // mysql inserting a new row
-    $sql = "INSERT INTO products(name, price, description) VALUES('$name', '$price', '$description')";
+    $sql = "INSERT INTO products(name, price, description) VALUES('$escapedname', '$escapedprice', '$escapeddesc')";
     // $result= $cone -> query($sql);
     // $affected = $cone -> affected_rows;
 
@@ -37,10 +42,9 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
  //       echo "Product successfully added.";
  //    } else {
  //        // failed to insert row
-	// echo "Some error occured.";
+    // echo "Some error occured.";
  //    }
 } else {
     echo "Some field missing.";
 }
 ?>
-

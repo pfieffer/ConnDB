@@ -18,9 +18,14 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
     // connecting to db
     $conn = new DB_CONNECT();
     $cone = $conn -> con;
+    
+    //escpae the strings to be inserted to DB
+    $escapedname = mysqli_real_escape_string($cone, $name);
+    $escapedprice = mysqli_real_escape_string($cone, $price);
+    $escapeddesc = mysqli_real_escape_string($cone, $description);
  
     // mysql update row with matched pid
-    $sql = "UPDATE products SET name = '$name', price = '$price', description = '$description', updated_at=now() WHERE pid = $pid";
+    $sql = "UPDATE products SET name = '$escapedname', price = '$escapedprice', description = '$escapeddesc', updated_at=now() WHERE pid = $pid";
  
     // check if row inserted or not
     if (mysqli_query($cone, $sql)) {
@@ -34,4 +39,3 @@ else {
 }
 
 ?>
-
