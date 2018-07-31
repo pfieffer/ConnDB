@@ -2,6 +2,8 @@
 
 >Uses Volley Library
 
+
+##### Note: The app is merely simple, I wrote the php scripts (with the help of a friend) and the app just to learn the basics of RESTful api services and consuming the api on Android.
 ### Future enhancements:
 * ~~~Create products from android phone.~~~
 * View details of a product on clicking a particular item in all products listview.
@@ -58,26 +60,25 @@ dependencies {
 
 ---
 
-The MainActivity looks like:<br>
-[![Screenshot_20170802-125105.png](https://s1.postimg.org/cpxzyv8yn/Screenshot_20170802-125105.png)](https://postimg.org/image/vv198mnmj/)
-
----
-
 The sceenshot of JSON fetched from database is as follows:<br>
- [![Screenshot from 2017-07-25 16-21-14.png](https://s21.postimg.org/eq4821bc7/Screenshot_from_2017-07-25_16-21-14.png)](https://postimg.org/image/l3tb5ag83/)
+![JSON response](screenshots/ConnDBjson.PNG?raw=true)
 
 ---
 
 The View all products activity looks like:<br>
- [![Screenshot_20170801-164121.png](https://s3.postimg.org/9sianiadv/Screenshot_20170801-164121.png)](https://postimg.org/image/wh7hn2rrj/)
+ ![All Products](screenshots/AllProductActivity.PNG?raw=true)
 
 ---
 
 The AddProductActivity looks like:<br>
- [![Screenshot_20170801-164131.png](https://s3.postimg.org/sjk7xo4yb/Screenshot_20170801-164131.png)](https://postimg.org/image/hjz0m2ej3/)
-[![Screenshot_20170801-164214.png](https://s3.postimg.org/pbfqkmioj/Screenshot_20170801-164214.png)](https://postimg.org/image/m4l70zy8f/)
+ ![Add product](screenshots/AddProductActivity.PNG?raw=true)
 
 ---
 
 The UpdateProductActivity looks like:<br>
- [![Screenshot_20170801-164236.png](https://s3.postimg.org/yaaebecyb/Screenshot_20170801-164236.png)](https://postimg.org/image/6mxoxarrj/)
+ ![Update product](screenshots/UpdateProductActivity.PNG?raw=true)
+
+ ---
+
+ The DeleteProductActivity looks like:<br>
+ ![Delete product](screenshots/DeleteProductActivity.PNG?raw=true)
