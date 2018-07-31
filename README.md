@@ -66,19 +66,19 @@ The sceenshot of JSON fetched from database is as follows:<br>
 ---
 
 The View all products activity looks like:<br>
- ![All Products](screenshots/ViewAllProducts.PNG?raw=true)
+ ![All Products](screenshots/ViewAllProducts.png?raw=true)
 
 ---
 
 The AddProductActivity looks like:<br>
- ![Add product](screenshots/AddProductActivity.PNG?raw=true)
+ ![Add product](screenshots/AddProductActivity.png?raw=true)
 
 ---
 
 The UpdateProductActivity looks like:<br>
- ![Update product](screenshots/UpdateProductActivity.PNG?raw=true)
+ ![Update product](screenshots/UpdateProductActivity.png?raw=true)
 
  ---
 
  The DeleteProductActivity looks like:<br>
- ![Delete product](screenshots/DeleteProductActivity.PNG?raw=true)
+ ![Delete product](screenshots/DeleteProductActivity.png?raw=true)
