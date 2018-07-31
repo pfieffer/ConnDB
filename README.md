@@ -66,7 +66,7 @@ The sceenshot of JSON fetched from database is as follows:<br>
 ---
 
 The View all products activity looks like:<br>
- ![All Products](screenshots/AllProductActivity.PNG?raw=true)
+ ![All Products](screenshots/ViewAllProducts.PNG?raw=true)
 
 ---
 
